@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Read Bot</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header and controls -->
+    <div class="header">
+      <div class="title">Page content</div>
+      <div class="extraction-controls">
+        <button id="jinaExtractBtn" class="extraction-btn" title="Extract with Jina AI">J</button>
+        <button id="downloadExtractBtn" class="extraction-btn" title="Extract with Download API">D</button>
+        <button id="readabilityExtractBtn" class="extraction-btn active" title="Extract with Readability.js">R</button>
+      </div>
+    </div>
+    
+    <!-- Content extraction area -->
+    <div class="content-section">      
+      <div class="content-container">
+        <div id="extractedContent" class="extracted-content"></div>
+        <div id="loadingIndicator" class="loading-indicator hidden">Extracting content...</div>
+        <div id="extractionError" class="extraction-error hidden">Failed to extract content.</div>
+      </div>
+    </div>
+    
+    <!-- Quick input buttons -->
+    <div class="quick-inputs" id="quickInputs">
+      <!-- Quick input buttons will be generated here dynamically -->
+    </div>
+    
+    <!-- Chat area -->
+    <div class="chat-section">
+      <div id="chatContainer" class="chat-container">
+        <!-- Chat messages will be added here dynamically -->
+      </div>
+      
+      <!-- Image preview area (shown when images are pasted) -->
+      <div id="imagePreviewContainer" class="image-preview-container hidden">
+        <div class="image-preview-header">
+          Image attached
+          <button id="removeImageBtn" class="remove-image-btn">×</button>
+        </div>
+        <div id="imagePreview" class="image-preview"></div>
+      </div>
+      
+      <!-- Input area -->
+      <div class="input-container">
+        <div class="input-wrapper">
+          <textarea id="userInput" placeholder="Ask about this content..." rows="2"></textarea>
+          <button id="sendBtn" class="send-btn"><i class="material-icons">send</i></button>
+        </div>
+        <div class="input-actions">
+          <button id="clearBtn" class="clear-btn" title="Clear Conversation">C</button>
+          <button id="exportBtn" class="export-btn" title="Export Conversation">E</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Load third-party libraries -->
+  <script src="../js/lib/marked.min.js"></script>
+  
+  <!-- Load Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <!-- Load module scripts -->
+  <script src="popup.js" type="module"></script>
+</body>
+</html> 
